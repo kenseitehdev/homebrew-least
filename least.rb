@@ -7,6 +7,7 @@ class Least < Formula
 
   depends_on "ncurses"
 
+
   def install
     system "make"
     bin.install "least"
