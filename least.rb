@@ -7,10 +7,22 @@ class Least < Formula
 
   depends_on "ncurses"
 
+  # For multiple architectures, you can make use of this
   def install
-    # Make the necessary directories
-    system "make", "all"  # Runs the Makefile's default target
-    bin.install "bin/least"  # Installs the least binary to the bin directory
+    # Handle architecture-specific installation
+    if Hardware::CPU.arm?  # If ARM architecture (e.g., Apple Silicon)
+      # Modify flags or installation steps specific to ARM architecture
+      system "make", "all", "CFLAGS=-arch arm64"
+    elsif Hardware::CPU.intel?  # If Intel architecture (e.g., Intel x86_64)
+      # Modify flags or installation steps specific to x86_64
+      system "make", "all", "CFLAGS=-arch x86_64"
+    else
+      # Handle any other architectures if needed
+      system "make", "all"
+    end
+
+    # Install the binary
+    bin.install "bin/least"
   end
 
   test do
