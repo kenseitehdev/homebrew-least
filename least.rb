@@ -7,10 +7,10 @@ class Least < Formula
 
   depends_on "ncurses"
 
-  def install
-    system "make"
-    bin.install "least"
-  end
+def install
+  system "make", "least"  # Adjust the target if needed
+  bin.install "least"
+end
 
   test do
     system "#{bin}/least", "--version"
