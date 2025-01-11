@@ -7,9 +7,11 @@ class Least < Formula
 
   depends_on "ncurses"
 
-def install
-  bin.install "least"
-end
+  def install
+    # Make the necessary directories
+    system "make", "all"  # Runs the Makefile's default target
+    bin.install "bin/least"  # Installs the least binary to the bin directory
+  end
 
   test do
     system "#{bin}/least", "--version"
