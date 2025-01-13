@@ -1,8 +1,8 @@
 class Least < Formula
   desc "A Lightweight less Alternative for Code Browsing"
   homepage "https://github.com/kenseitehdev/Least"
-  url "https://github.com/kenseitehdev/Least/archive/refs/tags/0.3.tar.gz"
-  sha256 "7f159e195e6b64a9e6c18570cef87ff2e3ee595e8a3b2960bbf0120b33c953e5"
+  url "https://github.com/kenseitehdev/Least/archive/refs/tags/0.4.tar.gz"
+  sha256 "1ad3cacba5cf18e6e56622ac2fb41b1f97e4a23ce4f9215986de8be264507ad9"
   license "MIT"
 
   depends_on "ncurses"
